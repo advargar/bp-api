@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "z9yvEmu4UDqfkAPy9L5HpVVubTbzVzE4WNlhP7gbKAU=",
+  "Source": "polizas-api",
+  "BasePath": "_content/polizas-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

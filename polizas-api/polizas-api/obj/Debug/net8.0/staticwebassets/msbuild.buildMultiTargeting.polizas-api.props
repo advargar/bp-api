@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\polizas-api.props" />
+</Project>
