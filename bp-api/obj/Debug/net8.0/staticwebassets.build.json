@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "QwQUwVnh/XmVRNBOBFeAMch+ngpO7Eij1pGbbOLgq5Y=",
+  "Source": "bp-api",
+  "BasePath": "_content/bp-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
