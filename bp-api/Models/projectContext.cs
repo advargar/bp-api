@@ -22,8 +22,84 @@ namespace bp_api.Models
         {
             modelBuilder.Entity<PolicyClientResult>().HasNoKey();
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Client>().HasData(
+                  new Client
+                  {
+                      InsureId = "001230456",
+                      Name = "Juan",
+                      FirstSurname = "Pérez",
+                      SecondSurname = "Gómez",
+                      PersonType = "Física",
+                      Birthdate = new DateTime(1985, 5, 12)
+                  },
+                  new Client
+                  {
+                      InsureId = "001230789",
+                      Name = "Laura",
+                      FirstSurname = "Ramírez",
+                      SecondSurname = "Soto",
+                      PersonType = "Física",
+                      Birthdate = new DateTime(1990, 3, 22)
+                  }
+              );
+
+            // Pólizas de prueba
+            modelBuilder.Entity<Policy>().HasData(
+                new Policy
+                {
+                    PolicyNumber = "POL12345",
+                    PolicyType = "Alto",
+                    Coverage = "Full",
+                    PolicyStatus = "Activo",
+                    CoverageAmount = 50000,
+                    Premium = 250,
+                    IssueDate = DateTime.Now.AddMonths(-6),
+                    ExpirationDate = DateTime.Now.AddMonths(6),
+                    InclusionDate = DateTime.Now.AddMonths(-6),
+                    PolicyPeriod = DateTime.Now.AddMonths(8),
+                    InsuranceCompany = "INS Costa Rica",
+                    ClientId = "001230456"
+                },
+                new Policy
+                {
+                    PolicyNumber = "POL67890",
+                    PolicyType = "Medio",
+                    Coverage = "Regular",
+                    PolicyStatus = "Proceso",
+                    CoverageAmount = 30000,
+                    Premium = 180,
+                    IssueDate = DateTime.Now.AddMonths(-3),
+                    ExpirationDate = DateTime.Now.AddMonths(9),
+                    InclusionDate = DateTime.Now.AddMonths(-3),
+                    PolicyPeriod = DateTime.Now.AddMonths(6),
+                    InsuranceCompany = "INS Costa Rica",
+                    ClientId = "001230789"
+                }
+            );
+
+            // Usuarios de prueba
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    UserId = 5,
+                    UserName = "Admin",
+                    Password = "admin123",
+                    Role = "ADMINISTRADOR",
+                    Email = "admin@gmail.com"
+                },
+                new User
+                {
+                    UserId = 6,
+                    UserName = "Prueba",
+                    Password = "prueba123",
+                    Role = "LECTOR",
+                    Email = "prueba@gmail.com"
+                }
+            );
         }
 
-       
+
+
     }
 }

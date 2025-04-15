@@ -600,7 +600,7 @@
     "schemas": {
       "Client": {
         "required": [
-          "birtdate",
+          "birthdate",
           "firstSurname",
           "insureId",
           "name",
@@ -610,28 +610,38 @@
         "type": "object",
         "properties": {
           "insureId": {
+            "maxLength": 20,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "name": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "firstSurname": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "secondSurname": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "personType": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "birtdate": {
+          "birthdate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "policies": {
             "type": "array",
@@ -645,7 +655,6 @@
       },
       "Policy": {
         "required": [
-          "client",
           "clientId",
           "coverage",
           "expirationDate",
@@ -653,6 +662,7 @@
           "insuranceCompany",
           "issueDate",
           "policyNumber",
+          "policyPeriod",
           "policyStatus",
           "policyType",
           "premium"
@@ -660,10 +670,14 @@
         "type": "object",
         "properties": {
           "policyNumber": {
+            "maxLength": 20,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "policyType": {
+            "maxLength": 20,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
@@ -673,17 +687,21 @@
           },
           "expirationDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "issueDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "coverage": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "policyStatus": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
@@ -691,20 +709,25 @@
             "type": "number",
             "format": "double"
           },
+          "policyPeriod": {
+            "type": "string",
+            "format": "date"
+          },
           "inclusionDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "insuranceCompany": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "clientId": {
+            "maxLength": 20,
+            "minLength": 0,
             "type": "string",
             "nullable": true
-          },
-          "client": {
-            "$ref": "#/components/schemas/Client"
           }
         },
         "additionalProperties": false
